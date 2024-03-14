@@ -1,0 +1,43 @@
+.header {
+    background-color: #333; // Background color for the header
+    color: #fff; // Text color
+    padding: 10px 20px; // Padding around the header content
+    display: flex; // Flexbox layout for alignment
+    justify-content: space-between; // Align items evenly along the main axis
+    align-items: center; // Center items vertically
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Shadow for a subtle elevation effect
+  
+    // Style for the logo or title
+    .logo {
+      font-size: 24px; // Font size
+      font-weight: bold; // Bold font weight
+      text-decoration: none; // Remove underline for links
+      color: #fff; // Text color
+    }
+  
+    // Style for navigation links
+    .nav-links {
+      list-style: none; // Remove default list styles
+      margin: 0; // Remove default margin
+      padding: 0; // Remove default padding
+      display: flex; // Flexbox layout for alignment
+  
+      // Style for individual navigation items
+      li {
+        margin-right: 15px; // Spacing between navigation items
+        font-size: 16px; // Font size
+        font-weight: bold; // Bold font weight
+        cursor: pointer; // Show pointer cursor on hover
+  
+        // Style for the active navigation item
+        &.active {
+          color: #ffcc00; // Highlight color for active item
+        }
+  
+        // Hover effect for navigation items
+        &:hover {
+          text-decoration: underline; // Underline on hover
+        }
+      }
+    }
+  }
