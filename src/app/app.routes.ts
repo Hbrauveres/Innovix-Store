@@ -16,6 +16,6 @@ export const routes: Routes = [
   { path: 'cart', title: "Cart", component: CartComponent },
   { path: 'checkout', title: "Checkout", component: CheckoutComponent },
   { path: 'login', title: "Login", component: LoginComponent },
-  { path: 'product/:id', component: ProductComponent },
+  { path: 'product', component: ProductComponent },
   { path: '**', title: "Page not found", component: PageNotFoundComponent },
 ];
