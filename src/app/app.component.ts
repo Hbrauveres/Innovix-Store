@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductComponent } from './pages/product/product.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './shared-components/footer/footer.component';
+import { HeaderComponent } from './shared-components/header/header.component';
 
 @Component({
   selector: 'app-root',
