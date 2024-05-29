@@ -1,28 +1,126 @@
-<section class="text-gray-600 body-font">
-  <div class="container mx-auto pt-5 px-5 flex flex-col">
-      <div class="flex flex-wrap md:-m-2 -m-1 w-full">
-          <div class="flex flex-wrap w-1/2">
-              <div class="md:p-2 p-1 w-1/2">
-                  <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/500x300">
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
-                  <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/501x301">
-              </div>
-              <div class="md:p-2 p-1 w-full">
-                  <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/600x360">
-              </div>
-          </div>
-          <div class="flex flex-wrap w-1/2">
-              <div class="md:p-2 p-1 w-full">
-                  <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/601x361">
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
-                  <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/502x302">
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
-                  <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/503x303">
-              </div>
-          </div>
-      </div>
-  </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="banner.component.css">
+<link rel="stylesheet" href="../../../../../assets/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<section class="banner-carousel">
+    <button class="carousel-nav prev" (click)="scrollCarousel(-1)">&#10094;</button>
+
+    <div class="carousel-track" #carouselTrack style="margin-left: 30px;">
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+       <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="large"></div>
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="small-container">
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+            <div class="large"></div>
+        </div> 
+    </div>
+    <button class="carousel-nav next" (click)="scrollCarousel(1)">&#10095;</button>
 </section>
