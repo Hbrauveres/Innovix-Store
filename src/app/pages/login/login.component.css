@@ -1,0 +1,79 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 81vh;
+    width: 100vw;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border: 1px solid #b3b3b3;
+    border-radius: 16px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    background-color: #F7F6F9;
+}
+
+.forgot-password {
+    float: right;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.forgot-password:hover{
+    color: #0056b3;
+}
+
+button {
+    background-color: #8B71C3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #573C90;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #a5a5a5;
+    margin: 20px 0;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
