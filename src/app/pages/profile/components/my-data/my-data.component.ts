@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './my-data.component.css'
 })
 export class MyDataComponent {
+  editing: boolean = false;
 
+  toggleEdit() {
+    this.editing = !this.editing;
+  }
 }
