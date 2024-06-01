@@ -1,0 +1,28 @@
+:host {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* height: 81vh; */
+  width: 100vw;
+}
+
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  margin-top: 30px; /* Adicionando margem superior */
+  align-items: flex-start; /* Alinhar ao topo */
+  justify-content: flex-start; /* Alinhar à esquerda */
+  padding: 20px;
+}
+
+.left-section {
+  flex: 2 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.right-section {
+  flex: 1 1 30%;
+}
