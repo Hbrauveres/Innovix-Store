@@ -1,37 +1,32 @@
-.header {
+.site-header {
+    background-color: #E9D7E4;
+    color: black;
+    padding: 20px 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.header-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #E9D7E4;
-    border-bottom: 1px solid #E9D7E4;
 }
 
-.logo img {
-    height: 35px;
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
 }
 
 .header-buttons {
     display: flex;
-    align-items: center;
 }
 
-.header-buttons .btn {
-    background-color: #E9D7E4;
-    color: 000000;
-    border: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-}
-
-.header-buttons .btn i {
-    margin-left: 5px;
-}
-
-.header-buttons .btn:hover {
-    color: #555;
+.header-buttons button {
+    margin-left: 30px;
 }

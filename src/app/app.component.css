@@ -42,3 +42,15 @@ body {
     color: #ffffff;
     text-shadow: 0 1px 0 #528ecc;
 }
+
+.container {
+    width: 100%; /* Adjust as needed */
+    max-width: 1920px; /* Max width to keep content readable on large screens */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color for visibility */
+    min-height: 100vh; /* Full height for container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Space out the header, main, and footer */
+}

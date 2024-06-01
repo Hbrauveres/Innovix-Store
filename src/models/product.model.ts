@@ -3,7 +3,7 @@ export interface Product {
   name:string;
   price:string;
   details:string;
-  image:string;
+  imageUrl:string;
 }
 
 export interface ProductsModel {

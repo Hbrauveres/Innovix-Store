@@ -6,95 +6,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 <div class="product-list">
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 1</div>
-	  <div class="product-description poppins-light">Descrição do produto 1</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 2</div>
-	  <div class="product-description poppins-light">Descrição do produto 2</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 3</div>
-	  <div class="product-description poppins-light">Descrição do produto 3</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 4</div>
-	  <div class="product-description poppins-light">Descrição do produto 4</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 5</div>
-	  <div class="product-description poppins-light">Descrição do produto 5</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 6</div>
-	  <div class="product-description poppins-light">Descrição do produto 6</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 7</div>
-	  <div class="product-description poppins-light">Descrição do produto 7</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 8</div>
-	  <div class="product-description poppins-light">Descrição do produto 8</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 9</div>
-	  <div class="product-description poppins-light">Descrição do produto 9</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 10</div>
-	  <div class="product-description poppins-light">Descrição do produto 10</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 11</div>
-	  <div class="product-description poppins-light">Descrição do produto 11</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 12</div>
-	  <div class="product-description poppins-light">Descrição do produto 12</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 13</div>
-	  <div class="product-description poppins-light">Descrição do produto 13</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 14</div>
-	  <div class="product-description poppins-light">Descrição do produto 14</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-	<div class="product-card">
-	  <div class="product-image"></div>
-	  <div class="product-name poppins-regular">Produto 15</div>
-	  <div class="product-description poppins-light">Descrição do produto 15</div>
-	  <div class="product-price poppins-regular">R$ 1.000,00</div>
-	</div>
-  </div>
-  
+    @for (product of products; track trackProduct) {
+			<div class="product-card">
+				<div class="product-image" [style.backgroundImage]="'url(' + product.imageUrl + ')'"></div>
+				<div class="product-name">{{ product.name }}</div>
+				<div class="product-description">{{ product.details }}</div>
+				<div class="product-price">{{ product.price }}</div>
+			</div>
+    }
+</div>

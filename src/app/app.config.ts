@@ -3,20 +3,23 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
-import { counterReducer } from './states/counter/counter.reducer';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { tokenInterceptor } from '../interceptors/token.interceptor';
 import { provideEffects } from '@ngrx/effects';
+import { ProductsReducer } from './state/products/products.reducer';
+import { ProductsEffects } from './state/products/products.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideStore(),
-    provideState({ name: 'counter', reducer: counterReducer }),
+    provideState({ name: 'products', reducer: ProductsReducer }),
     provideEffects(),
     provideHttpClient(withInterceptors([
         tokenInterceptor
     ])),
-    provideEffects()
+    provideEffects([
+      ProductsEffects
+    ])
 ]
 };

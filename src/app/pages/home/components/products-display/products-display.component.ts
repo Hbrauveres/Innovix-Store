@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ProductService } from '../../../../../services/product.service';
 import { Product } from '../../../../../models/product.model';
+import { Store } from '@ngrx/store';
+import { loadProducts } from '../../../../state/products/products.actions';
+import { getProductsList } from '../../../../state/products/products.selector';
 
 @Component({
   selector: 'app-products-display',
@@ -17,9 +20,9 @@ import { Product } from '../../../../../models/product.model';
 })
 export class ProductsDisplayComponent implements OnInit{
   
-  private products!: Product[];
+  public products!: Product[];
   
-  constructor(private productService:ProductService){
+  constructor(private store:Store){
 
   }
 
@@ -28,9 +31,15 @@ export class ProductsDisplayComponent implements OnInit{
   }
 
   LoadInitialProducts(){
-    this.productService.getAll().subscribe(product => {
-      this.products = product;
-      console.log(this.products)
+    this.store.dispatch(loadProducts());
+
+    this.store.select(getProductsList).subscribe(products => {
+      this.products = products;
+      console.log(products)
     });
+  }
+
+  trackProduct(index: number, product: Product) {
+    return product.id;
   }
 }
