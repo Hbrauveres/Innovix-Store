@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.order-products-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.order-products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-products-table th, 
+.order-products-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.order-products-table th {
+  background-color: transparent;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  margin-right: 16px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.divider-row {
+  height: 0;
+}
+
+.divider-row td {
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
