@@ -18,108 +18,93 @@ export class ProductService {
     const products: Product[] = [
       {
         id: '1',
-        name: 'Product One',
-        price: '19.99',
-        details: 'Details about Product One',
-        imageUrl: 'https://example.com/product1.jpg'
+        name: 'Laptop',
+        price: 799.99,
+        details: 'High-performance laptop with SSD storage.',
+        imageUrl: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        isOnSale: true,
+        discountedPrice: 699.99
       },
       {
         id: '2',
-        name: 'Product Two',
-        price: '29.99',
-        details: 'Details about Product Two',
-        imageUrl: 'https://example.com/product2.jpg'
+        name: 'Smartphone',
+        price: 599.99,
+        details: 'Latest model smartphone with dual-camera setup.',
+        imageUrl: 'https://example.com/smartphone.jpg',
+        isOnSale: false,
+        discountedPrice: 0
       },
       {
         id: '3',
-        name: 'Product Three',
-        price: '39.99',
-        details: 'Details about Product Three',
-        imageUrl: 'https://example.com/product3.jpg'
+        name: 'Headphones',
+        price: 149.99,
+        details: 'Wireless headphones with noise-cancellation feature.',
+        imageUrl: 'https://example.com/headphones.jpg',
+        isOnSale: false,
+        discountedPrice: 0
       },
       {
         id: '4',
-        name: 'Product Four',
-        price: '49.99',
-        details: 'Details about Product Four',
-        imageUrl: 'https://example.com/product4.jpg'
+        name: 'Smart Watch',
+        price: 199.99,
+        details: 'Fitness tracker and smartwatch with heart rate monitor.',
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1685868556097-641c237f3fa5?q=80&w=3728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        isOnSale: true,
+        discountedPrice: 169.99
       },
       {
         id: '5',
-        name: 'Product Five',
-        price: '59.99',
-        details: 'Details about Product Five',
-        imageUrl: 'https://example.com/product5.jpg'
+        name: 'Tablet',
+        price: 299.99,
+        details: '10-inch tablet with quad-core processor.',
+        imageUrl: 'https://example.com/tablet.jpg',
+        isOnSale: false,
+        discountedPrice: 0
       },
       {
         id: '6',
-        name: 'Product Six',
-        price: '69.99',
-        details: 'Details about Product Six',
-        imageUrl: 'https://example.com/product6.jpg'
+        name: 'Camera',
+        price: 499.99,
+        details: 'Mirrorless camera with 24MP sensor and 4K video recording.',
+        imageUrl: 'https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        isOnSale: true,
+        discountedPrice: 449.99
       },
       {
         id: '7',
-        name: 'Product Seven',
-        price: '79.99',
-        details: 'Details about Product Seven',
-        imageUrl: 'https://example.com/product7.jpg'
+        name: 'Gaming Console',
+        price: 399.99,
+        details: 'Next-gen gaming console with high-definition graphics.',
+        imageUrl: 'https://example.com/console.jpg',
+        isOnSale: false,
+        discountedPrice: 0
       },
       {
         id: '8',
-        name: 'Product Eight',
-        price: '89.99',
-        details: 'Details about Product Eight',
-        imageUrl: 'https://example.com/product8.jpg'
+        name: 'Wireless Speaker',
+        price: 99.99,
+        details: 'Portable wireless speaker with built-in battery.',
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1674729243673-0b5e871a8a24?q=80&w=3635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        isOnSale: true,
+        discountedPrice: 79.99
       },
       {
         id: '9',
-        name: 'Product Nine',
-        price: '99.99',
-        details: 'Details about Product Nine',
-        imageUrl: 'https://example.com/product9.jpg'
+        name: 'External Hard Drive',
+        price: 129.99,
+        details: '1TB external hard drive for data backup and storage.',
+        imageUrl: 'https://example.com/harddrive.jpg',
+        isOnSale: false,
+        discountedPrice: 0
       },
       {
         id: '10',
-        name: 'Product Ten',
-        price: '109.99',
-        details: 'Details about Product Ten',
-        imageUrl: 'https://example.com/product10.jpg'
-      },
-      {
-        id: '11',
-        name: 'Product Eleven',
-        price: '119.99',
-        details: 'Details about Product Eleven',
-        imageUrl: 'https://example.com/product11.jpg'
-      },
-      {
-        id: '12',
-        name: 'Product Twelve',
-        price: '129.99',
-        details: 'Details about Product Twelve',
-        imageUrl: 'https://example.com/product12.jpg'
-      },
-      {
-        id: '13',
-        name: 'Product Thirteen',
-        price: '139.99',
-        details: 'Details about Product Thirteen',
-        imageUrl: 'https://example.com/product13.jpg'
-      },
-      {
-        id: '14',
-        name: 'Product Fourteen',
-        price: '149.99',
-        details: 'Details about Product Fourteen',
-        imageUrl: 'https://example.com/product14.jpg'
-      },
-      {
-        id: '15',
-        name: 'Product Fifteen',
-        price: '159.99',
-        details: 'Details about Product Fifteen',
-        imageUrl: 'https://example.com/product15.jpg'
+        name: 'Fitness Tracker',
+        price: 79.99,
+        details: 'Water-resistant fitness tracker with heart rate monitor.',
+        imageUrl: 'https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        isOnSale: true,
+        discountedPrice: 59.99
       }
     ];
     

@@ -21,7 +21,5 @@ export class ProductComponent {
 	}
 
 	addToCart() {
-		// Lógica para adicionar ao carrinho
-		console.log(`Adicionado ao carrinho: ${this.quantity} unidades`);
 	}
 }

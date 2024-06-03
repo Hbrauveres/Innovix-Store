@@ -1,9 +1,11 @@
 export interface Product {
   id:string;
   name:string;
-  price:string;
+  price:number;
   details:string;
   imageUrl:string;
+  isOnSale:boolean;
+  discountedPrice:number;
 }
 
 export interface ProductsModel {

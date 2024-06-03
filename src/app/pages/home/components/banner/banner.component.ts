@@ -1,34 +1,34 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Product } from '../../../../../models/product.model';
 
 @Component({
-	selector: 'app-banner',
+  selector: 'app-banner',
 	standalone: true,
-	imports: [],
-	templateUrl: './banner.component.html',
-	styleUrls: ['./banner.component.css']
+  templateUrl: 'banner.component.html',
+  styleUrls: ['banner.component.css']
 })
-export class BannerComponent implements AfterViewInit {
-	currentIndex = 0;
-	slides: HTMLElement[] = [];
-	totalSlides = 0;
+export class BannerComponent implements OnInit {
+  
+	@Input() discountedProducts!: Product[];
 
-	ngAfterViewInit() {
-		this.slides = Array.from(document.querySelectorAll('.carousel-item'));
-		this.totalSlides = this.slides.length;
-	}
+  activeIndex = 0;
 
-	scrollCarousel(direction: number) {
-		this.currentIndex = (this.currentIndex + direction) % this.totalSlides;
-		if (this.currentIndex < 0) {
-			this.currentIndex = this.totalSlides - 1;
-		} 
-		
-		let offset = -this.currentIndex * (this.slides[0].offsetWidth + 30);
-		
-		const carouselTrackEl = document.querySelector('.carousel-track') as HTMLElement;
-		if (carouselTrackEl) {
-			carouselTrackEl.style.transform = `translateX(${offset}px)`;
-		}
-	}
+  constructor() { }
 
+  ngOnInit(): void {
+  }
+
+  isActive(index: number): boolean {
+    return index === this.activeIndex;
+  }
+
+  navigate(direction: 'prev' | 'next'): void {
+    if (direction === 'prev') {
+      this.activeIndex = (this.activeIndex - 1 + this.discountedProducts.length) % this.discountedProducts.length;
+    } else {
+      this.activeIndex = (this.activeIndex + 1) % this.discountedProducts.length;
+    }
+  }
 }
