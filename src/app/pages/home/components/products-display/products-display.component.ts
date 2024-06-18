@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Product } from '../../../../../models/product.model';
 
@@ -8,7 +7,6 @@ import { Product } from '../../../../../models/product.model';
   selector: 'app-products-display',
   standalone: true,
   imports: [
-    SearchBarComponent,
     RouterLink,
     RouterLinkActive
   ],
@@ -20,12 +18,18 @@ export class ProductsDisplayComponent implements OnInit{
   
   
   @Input() products!: Product[];
+
+  public displayProducts!: Product[];
   
   constructor(){
 
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges() {
+    this.displayProducts = this.products;
   }
 
   trackProduct(index: number, product: Product) {

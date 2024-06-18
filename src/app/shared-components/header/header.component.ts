@@ -10,14 +10,21 @@ import { AsyncPipe } from '@angular/common';
   imports: [
     RouterLink,
     RouterLinkActive,
-    AsyncPipe
+    AsyncPipe,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
+  isLogged: boolean = false;
+
   constructor(){
     
   }
+
+  switchLogin(){
+    this.isLogged = !this.isLogged
+  }
+
 }

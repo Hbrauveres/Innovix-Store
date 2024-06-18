@@ -1,6 +1,5 @@
 import { ProductsDisplayComponent } from './components/products-display/products-display.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -13,7 +12,7 @@ import { loadProducts } from '../../state/products/products.actions';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductsDisplayComponent, BannerComponent, SearchBarComponent],
+  imports: [ProductsDisplayComponent, BannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
