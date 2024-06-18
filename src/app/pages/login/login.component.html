@@ -7,19 +7,28 @@
 
 <div class="login-container poppins-regular">
     <h2>Login</h2>
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            <input 
+              type="email"
+              id="email"
+              name="email"
+              formControlName="email"
+            />
         </div>
         <div class="form-group">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-            <a href="#" class="forgot-password">Esqueci minha senha</a>
-        </div>
+                <label for="password">Senha:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                />
+            </div>
         <button type="submit">Entrar</button>
     </form>
     <hr>
     <p class="subtitle">Ainda não tem conta?</p>
-    <button class="signup-button">Cadastre-se</button>
+    <button class="signup-button" routerLink="/register">Cadastre-se</button>
 </div>

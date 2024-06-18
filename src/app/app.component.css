@@ -49,8 +49,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9; /* Background color for visibility */
-    min-height: 100vh; /* Full height for container */
+    min-height: 80vh; /* Full height for container */
     display: flex;
-    flex-direction: column;
     justify-content: center; /* Space out the header, main, and footer */
 }

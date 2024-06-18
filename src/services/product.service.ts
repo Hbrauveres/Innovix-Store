@@ -21,7 +21,7 @@ export class ProductService {
         name: 'Laptop',
         price: 799.99,
         details: 'High-performance laptop with SSD storage.',
-        imageUrl: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        imageUrl: 'https://placehold.co/1880x600',
         isOnSale: true,
         discountedPrice: 699.99
       },
