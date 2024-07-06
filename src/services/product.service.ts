@@ -48,7 +48,7 @@ export class ProductService {
         name: 'Smart Watch',
         price: 199.99,
         details: 'Fitness tracker and smartwatch with heart rate monitor.',
-        imageUrl: 'https://plus.unsplash.com/premium_photo-1685868556097-641c237f3fa5?q=80&w=3728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        imageUrl: 'https://preview.redd.it/zl3jkgy4ic681.png?width=1842&format=png&auto=webp&s=0c13569a0f4f3e56921f2a0e754c3b08e180d463',
         isOnSale: true,
         discountedPrice: 169.99
       },

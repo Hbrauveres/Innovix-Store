@@ -6,10 +6,19 @@ body {
     margin: 0;
 }
 
-.carousel {
-    max-width: 1880px;
-    height: 600px;
+.carousel-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+}
+
+.carousel {
+    max-width: 1920px;
+    height: 600px;
 }
 
 .carousel > ul {

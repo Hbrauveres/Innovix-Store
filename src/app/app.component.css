@@ -46,10 +46,8 @@ body {
 .container {
     width: 100%; /* Adjust as needed */
     max-width: 1920px; /* Max width to keep content readable on large screens */
-    margin: 0 auto;
-    padding: 20px;
     background-color: #f9f9f9; /* Background color for visibility */
     min-height: 80vh; /* Full height for container */
-    display: flex;
     justify-content: center; /* Space out the header, main, and footer */
+    position: relative;
 }

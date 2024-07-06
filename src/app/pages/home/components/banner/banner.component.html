@@ -1,11 +1,13 @@
-<div class="carousel">
-    <button class="carousel-button prev" (click)="navigate('prev')">&#10092;</button>
-    <button class="carousel-button next" (click)="navigate('next')">&#10093;</button>
-    <ul>
-        @for (product of discountedProducts; track product; let  i = $index) {
-            <li class="slide" [class.data-active]="isActive(i)">
-                <img [src]="product.imageUrl" alt="tanto faz">
-            </li>
-        }
-    </ul>
+<div class="carousel-container">
+    <div class="carousel">
+        <button class="carousel-button prev" (click)="navigate('prev')">&#10092;</button>
+        <button class="carousel-button next" (click)="navigate('next')">&#10093;</button>
+        <ul>
+            @for (product of discountedProducts; track product; let  i = $index) {
+                <li class="slide" [class.data-active]="isActive(i)">
+                    <img [src]="product.imageUrl" alt="tanto faz">
+                </li>
+            }
+        </ul>
+    </div>
 </div>

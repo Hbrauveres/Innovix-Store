@@ -1,47 +1,3 @@
-// import { Component } from '@angular/core';
-// import { formatDate } from '@angular/common';
-// import { FormBuilder, Validators, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-
-// @Component({
-// 	selector: 'app-register',
-// 	standalone: true,
-// 	imports: [
-// 		ReactiveFormsModule
-// 	],
-// 	templateUrl: './register.component.html',
-// 	styleUrl: './register.component.scss'
-// })
-// export class RegisterComponent {
-	
-// 	registerForm: FormGroup;
-	
-// 	constructor(private builder: FormBuilder) {
-// 		this.registerForm = this.builder.group({
-//       fullName: ['', Validators.required],
-//       birthday: [formatDate(new Date(), 'yyyy-MM-dd', 'en'), Validators.required],
-//       cpf: ['123.456.789-10', [Validators.required, Validators.pattern(/\d{3}\.\d{3}\.\d{3}-\d{2}/)]],
-//       phone: ['(99) 99999-9999', [Validators.required, Validators.pattern(/\(\d{2}\) \d{5}-\d{4}/)]],
-//       email: ['', [Validators.required, Validators.email]],
-//       password: ['', [Validators.required, Validators.minLength(5)]]
-//     });
-// 	}
-
-// 	// this.registerForm = this.builder.group({
-// 	// 	fullName: this.builder.control('', Validators.required),
-// 	// 	birthday: this.builder.control(formatDate(new Date(), 'dd-MM-yyyy', 'en'), Validators.required),
-// 	// 	cpf: this.builder.control('123.456.789-10', Validators.compose([Validators.required, Validators.pattern(/\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}/)])),
-// 	// 	phone: this.builder.control('(99) 99999-9999', Validators.compose([Validators.required, Validators.pattern(/\(\d{2}\) \d{5}-\d{4}/)])),
-// 	// 	email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
-// 	// 	password: this.builder.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
-// 	//  })
-
-// 	onSubmit(){
-// 		if(this.registerForm.valid){
-
-// 		}
-// 	}
-// }
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import {
@@ -139,7 +95,7 @@ export class RegisterComponent {
 		const formData = this.form.value;
 
 		try {
-      const response = await axios.post('http://localhost:8080/login/registerCostumer', formData);
+      const response = await axios.post('http://localhost:8080/api/persons/registerCustomer', formData);
       this.successMessage = 'Registration successful!';
 
 			this.router.navigate(['/home']);

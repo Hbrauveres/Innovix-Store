@@ -1,18 +1,10 @@
-:host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 81vh;
-    width: 100vw;
-}
-
 .cadastro-container {
     background-color: #ffffff;
-    border: 1px solid #b3b3b3;
     border-radius: 16px;
-    padding: 25px;
     width: 900px;
+    position: relative;
     margin: 0 auto;
+    padding: 25px;
 }
 
 h2 {
@@ -20,9 +12,9 @@ h2 {
     font-size: 24px;
 }
 
-form {
+/* form {
     margin-bottom: 20px;
-}
+} */
 
 .form-group {
     margin-bottom: 15px;

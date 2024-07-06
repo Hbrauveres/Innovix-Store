@@ -1,12 +1,12 @@
 
 .pedidos-container {
     background-color: #ffffff;
-    border: 1px solid #b3b3b3;
-    border-radius: 16px;
+    /* border: 1px solid #b3b3b3; */
     padding: 25px;
+    border-radius: 16px;
     width: 900px;
-    margin: auto auto 70px auto;
-
+    position: relative;
+    margin: 0 auto;
 }
 
 .pedidos-container h2 {
@@ -19,9 +19,9 @@
     margin: 20px 0;
 }
 
-.pedido {
+/* .pedido {
     margin-bottom: 20px;
-}
+} */
 
 .pedido-header {
     display: flex;

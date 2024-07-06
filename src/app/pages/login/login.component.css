@@ -1,17 +1,18 @@
-:host {
+/* :host {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 81vh;
     width: 100vw;
-}
+} */
 
 .login-container {
     background-color: #ffffff;
     border: 1px solid #b3b3b3;
     border-radius: 16px;
     padding: 25px;
-    max-width: 600px;
+    max-width: 30vw;
+    min-width: 500px;
     margin: 0 auto;
 }
 
@@ -33,13 +34,16 @@ label {
     margin-top: 20px;
 }
 
-input[type="email"],
-input[type="password"] {
+input {
     width: 100%;
     padding: 12px 20px;
     border: 1px solid #a5a5a5;
     border-radius: 10px;
     background-color: #F7F6F9;
+}
+
+input[type="password"]{
+    margin-bottom: 35px;
 }
 
 .forgot-password {
