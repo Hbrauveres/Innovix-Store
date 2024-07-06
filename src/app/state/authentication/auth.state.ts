@@ -1,6 +1,11 @@
-import { ProductsModel } from "../../../models/product.model";
+import { Customer } from '../../../models/customer.model';
 
-export const productState:ProductsModel = {
-  products: [],
-  errorMessage: ''
-}
+export const customerState: Customer = {
+  code: '',
+  name: '',
+  email: '',
+  address: '',
+  phone: '',
+  authToken: '',
+  errorMessage: '',
+};

@@ -1,24 +1,25 @@
-import { createReducer, on } from "@ngrx/store"
-import { productState } from "./auth.state"
-import { loginFail, loginSuccess } from "./auth.actions"
+import { createReducer, on } from '@ngrx/store';
+import { customerState } from './auth.state';
+import { loginFail, loginSuccess } from './auth.actions';
 
-const _ProductReducer = createReducer(productState,
-  on(loadProductsSuccess, (state,action)=>{
-    return{
+const _CustomerReducer = createReducer(
+  customerState,
+  on(loginSuccess, (state, action) => {
+    return {
       ...state,
-      products:action.products,
-      errorMessage: ''
-    }
+      success: action.authenticationResponse.success,
+      customer: action.authenticationResponse.customer,
+      errorMessage: '',
+    };
   }),
-  on(loadProductsFail, (state,action)=>{
-    return{
+  on(loginFail, (state, action) => {
+    return {
       ...state,
-      products:[],
-      errorMessage: action.errorMessage
-    }
+      errorMessage: action.errorMessage,
+    };
   })
-)
+);
 
-export function ProductsReducer(state: any, action: any){
-  return _ProductReducer(state,action)
+export function CustomerReducer(state: any, action: any) {
+  return _CustomerReducer(state, action);
 }

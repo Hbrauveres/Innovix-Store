@@ -1,8 +1,8 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { ProductsModel } from "../../../models/product.model";
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { Customer } from '../../../models/customer.model';
 
-const getProductsState = createFeatureSelector<ProductsModel>('products');
+const getCustomerState = createFeatureSelector<Customer>('customer');
 
-export const getProductsList = createSelector(getProductsState, (state)=>{
-  return state.products;
-})
+export const getCustomerData = createSelector(getCustomerState, (state) => {
+  return state;
+});
