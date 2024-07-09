@@ -5,8 +5,8 @@ import { NgFor } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Product } from '../../../models/product.model';
-import { getProductsList } from '../../state/products/products.selector';
-import { loadProducts } from '../../state/products/products.actions';
+import { getProductsList } from '../../state-old/products/products.selector';
+import { loadProducts } from '../../state-old/products/products.actions';
 
 
 @Component({

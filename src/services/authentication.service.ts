@@ -32,4 +32,8 @@ export class AuthenticationService {
       }, 1000);
     });
   }
+
+  register(username:string, password:string){
+    throw new Error("Method not implemented exception.");
+  }
 }

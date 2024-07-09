@@ -1,0 +1,36 @@
+{
+    "associate": [
+        {
+            "id": 1,
+            "name": "Henrique Brauveres",
+            "email": "h@gmail.com",
+            "phone": "51996371708",
+            "associatedgroup": "level1",
+            "address": "Rua bacana, 2",
+            "type": "ADMIN",
+            "status": true
+        },
+        {
+            "id": 2,
+            "name": "Luana",
+            "email": "luana@example.com",
+            "phone": "51999999999",
+            "associatedgroup": "level1",
+            "address": "Rua bacana, 3",
+            "type": "ADMIN",
+            "status": true
+        },
+        {
+            "id": 3,
+            "name": "Erico",
+            "email": "erico@example.com",
+            "phone": "51888888888",
+            "associatedgroup": "level1",
+            "address": "Rua bacana, 4",
+            "type": "CUSTOMER",
+            "status": true
+        }
+    ],
+    "user": []
+}
+
