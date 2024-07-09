@@ -1,6 +1,8 @@
+import { Product } from "../../../models/product.model";
+
 // state/products.state.ts
 export interface ProductsState {
-    products: any[];
+    products: Product[];
     loading: boolean;
     error: any;
   }
