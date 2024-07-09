@@ -2,10 +2,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthenticationService } from '../../../services/authentication.service';
-import { login, loginSuccess, loginFailure, register, registerSuccess, registerFailure } from '../actions/auth.actions';
+import { login, loginSuccess, loginFailure, register, registerSuccess, registerFailure } from './auth.actions';
 import { exhaustMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthenticationResponse } from '../../../models/responses/authenticationResponse.model';
 
 @Injectable()
 export class AuthEffects {
@@ -19,25 +20,31 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(login),
       exhaustMap(action =>
-        this.authService.login(action.username, action.password).pipe(
-          map(user => loginSuccess({ user })),
-          catchError(error => of(loginFailure({ error })))
+        this.authService.login(action.loginData).pipe(
+          map((response: AuthenticationResponse) => {
+            if (response.success) {
+              return loginSuccess({ user: response.user, isLogged: true });
+            } else {
+              return loginFailure({ error: response.errorMessage });
+            }
+          }),
+          catchError(error => of(loginFailure({ error: error.message })))
         )
       )
     )
   );
 
-  register$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(register),
-      exhaustMap(action =>
-        this.authService.register(action.userData, action.password).pipe(
-          map(user => registerSuccess({ user })),
-          catchError(error => of(registerFailure({ error })))
-        )
-      )
-    )
-  );
+  // register$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(register),
+  //     exhaustMap(action =>
+  //       this.authService.register(action.registerUserData).pipe(
+  //         map(user => registerSuccess({ user })),
+  //         catchError(error => of(registerFailure({ error })))
+  //       )
+  //     )
+  //   )
+  // );
 
   loginSuccess$ = createEffect(() =>
     this.actions$.pipe(

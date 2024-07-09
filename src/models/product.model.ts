@@ -4,11 +4,6 @@ export interface Product {
   price:number;
   details:string;
   imageUrl:string;
-  isOnSale:boolean;
+  saleId:number;
   discountedPrice:number;
-}
-
-export interface ProductsModel {
-  products: Product[],
-  errorMessage:string
 }

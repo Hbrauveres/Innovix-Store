@@ -10,6 +10,8 @@ import {
 import { AuthenticationService } from '../../../services/authentication.service';
 import axios from 'axios';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { login } from '../../state/auth/auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -29,10 +31,11 @@ export class LoginComponent {
 
   constructor(
 		private formBuilder: FormBuilder,
-		private authService: AuthenticationService
+		private authService: AuthenticationService,
+    private store: Store
 	) {
 		this.loginForm = new FormGroup({
-			email: new FormControl(''),
+			username: new FormControl(''),
 			password: new FormControl(''),
 		});
 	}
@@ -40,7 +43,7 @@ export class LoginComponent {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group(
       {
-				email: ['', [Validators.required, Validators.email]],
+				username: ['', [Validators.required, Validators.email]],
 				password: ['', [Validators.required, Validators.minLength(6)]],
       });
   }
@@ -53,11 +56,6 @@ export class LoginComponent {
 
 		const formData = this.loginForm.value;
 
-		try {
-      const response = await axios.post('http://localhost:8080/login', formData);
-      console.log(JSON.stringify(this.loginForm.value, null, 2));
-    } catch (error) {
-      console.error('There was an error!', error);
-    }
+    this.store.dispatch(login({ loginData: formData }));
   }
 }

@@ -1,6 +1,6 @@
-import { ProductsModel } from "../../../models/product.model";
+// import { Product } from "../../../models/product.model";
 
-export const productState:ProductsModel = {
-  products: [],
-  errorMessage: ''
-}
+// export const productState:ProductsModel = {
+//   products: [],
+//   errorMessage: ''
+// }

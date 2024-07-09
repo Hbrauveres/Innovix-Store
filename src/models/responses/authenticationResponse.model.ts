@@ -1,5 +1,7 @@
+import { UserData } from "../user-data.model";
+
 export interface AuthenticationResponse{
     success: boolean;
-    token: string;
+    user: UserData;
     errorMessage: string;
 }

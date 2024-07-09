@@ -2,38 +2,27 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { AuthenticationResponse } from "../models/responses/authenticationResponse.model";
 import { AuthenticationRequest } from "../models/requests/authenticationRequest.model";
+import { RegisterUserData } from "../models/register-user-data.model";
+import { LoginData } from "../models/login-data.model";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthenticationService {
+  
+  private API_BASE_URL = 'http://localhost:3000';
+
   constructor (private http:HttpClient){
 
   }
 
-  async login(authRequest: AuthenticationRequest): Promise<AuthenticationResponse> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        if(authRequest.login == "test" && authRequest.password == "123"){
-            resolve({
-                success: true,
-                token: "eu-so-um-token-smile-face",
-                errorMessage: ""
-            });
-        }
-        else{
-            resolve({
-                success: false,
-                token:"",
-                errorMessage: "login fail"
-            })
-        }
-      }, 1000);
-    });
+  login(authRequest: LoginData): Observable<AuthenticationResponse> {
+    return this.http.post<AuthenticationResponse>(`${this.API_BASE_URL}/api/login`, authRequest);
   }
 
-  register(username:string, password:string){
+  register(registerUserData: RegisterUserData){
     throw new Error("Method not implemented exception.");
   }
 }
