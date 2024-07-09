@@ -7,9 +7,9 @@ export interface ProductsState {
     error: any;
   }
   
-  export const initialProductsState: ProductsState = {
+export const initialProductsState: ProductsState = {
     products: [],
     loading: false,
     error: null,
-  };
+};
   

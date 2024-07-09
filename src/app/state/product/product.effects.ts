@@ -6,6 +6,7 @@ import { createProduct, creationFailure, creationSuccess, loadProducts, loadProd
 import { exhaustMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import { ProductsResponse } from '../../../models/responses/products-response.model';
 
 @Injectable()
 export class ProductsEffects {
@@ -36,10 +37,11 @@ export class ProductsEffects {
       ofType(loadProducts),
       exhaustMap(action =>
         this.productService.getProducts().pipe(
-          map(response => { if (!response.error) {
-            return loadProductsSuccess({ products: response });
+          map((response: ProductsResponse) => { 
+          if (response.success) {
+            return loadProductsSuccess({ products: response.products });
           } else {
-            return loadProductsFailure({ error: "Falha no carregamento" });
+            return loadProductsFailure({ error: response.error });
           }}),
           catchError(error => of(loadProductsFailure({ error: error.message })))
         )

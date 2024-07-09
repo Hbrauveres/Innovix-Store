@@ -11,19 +11,21 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { authReducer } from './state/auth/auth.reducers';
 import { AuthEffects } from './state/auth/auth.effects';
+import { productsReducer } from './state/product/product.reducers';
+import { ProductsEffects } from './state/product/product.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideStore(),
-    // provideState({ name: 'products', reducer: ProductsReducer }),
+    provideState({ name: 'products', reducer: productsReducer }),
     provideState({ name: 'auth', reducer:  authReducer}),
     provideEffects(),
     provideHttpClient(withInterceptors([
         tokenInterceptor
     ])),
     provideEffects([
-      // ProductsEffects
+      ProductsEffects,
       AuthEffects
     ]),
     provideStoreDevtools({

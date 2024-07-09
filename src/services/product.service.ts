@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Product } from "../models/product.model";
-import { ProductsState } from "../app/state/product/product.state";
 import { Observable } from "rxjs";
+import { ProductsResponse } from "../models/responses/products-response.model";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class ProductService {
 
   }
 
-  getProducts(): Observable<ProductsState>{
-    return this.http.get<ProductsState>(`${this.API_BASE_URL}/api/products`);
+  getProducts(): Observable<ProductsResponse>{
+    return this.http.get<ProductsResponse>(`${this.API_BASE_URL}/api/products`);
   }
 
   createProduct(product: Product): Observable<{success:boolean}> {
