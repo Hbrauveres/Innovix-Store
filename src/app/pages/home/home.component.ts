@@ -5,6 +5,9 @@ import { NgFor } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Product } from '../../../models/product.model';
+import { loadProducts } from '../../state/product/product.actions';
+import { selectProducts, selectProductsLoading } from '../../state/product/product.selectors';
+import { Observable, of } from 'rxjs';
 // import { getProductsList } from '../../state-old/products/products.selector';
 // import { loadProducts } from '../../state-old/products/products.actions';
 
@@ -18,7 +21,7 @@ import { Product } from '../../../models/product.model';
 })
 export class HomeComponent implements OnInit{
 
-  public products!: Product[];
+  public products: Product[] = [];
   public discountedProducts!: Product[];
 
   constructor(private store:Store){
@@ -29,7 +32,7 @@ export class HomeComponent implements OnInit{
     this.LoadInitialProducts();
   }
   
-  PopulateDiscountedProducts(products: Product[]) {
+  populateDiscountedProducts(products: Product[]) {
     if (!this.discountedProducts) {
       this.discountedProducts = [];
     }
@@ -40,17 +43,15 @@ export class HomeComponent implements OnInit{
           this.discountedProducts.push(product);
         }
       });
-      console.log("discounted products ", this.discountedProducts);
     }
   }
 
   LoadInitialProducts(){
-    // this.store.dispatch(loadProducts());
+    this.store.dispatch(loadProducts());
 
-    // this.store.select(getProductsList).subscribe(products => {
-    //   this.products = products;
-    //   console.log("products ", products)
-    //   this.PopulateDiscountedProducts(products)
-    // });
+    this.store.select(selectProducts).subscribe(productsList => {
+      this.products = productsList;
+      this.populateDiscountedProducts(productsList);
+    });
   }
 }

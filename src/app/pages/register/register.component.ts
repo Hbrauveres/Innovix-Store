@@ -102,8 +102,6 @@ export class RegisterComponent {
     } catch (error) {
       console.error('There was an error!', error);
     }
-
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
   onReset(): void {
