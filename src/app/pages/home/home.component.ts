@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit{
 
     if (products) {
       products.forEach(product => {
-        if (product.saleId != 0) {
+        if (product.sale != null) {
           this.discountedProducts.push(product);
         }
       });

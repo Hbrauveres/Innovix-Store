@@ -20,6 +20,6 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<{success:boolean}> {
-    return this.http.post<{success:boolean}>(`${this.API_BASE_URL}/api/addProduct`, product);
+    return this.http.post<{success:boolean}>(`${this.API_BASE_URL}/api/products/register`, product);
   }
 }

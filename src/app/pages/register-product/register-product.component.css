@@ -50,6 +50,12 @@ input, select {
     flex-wrap: wrap;
 }
 
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+
 .checkbox-group label {
     display: flex;
     align-items: center;

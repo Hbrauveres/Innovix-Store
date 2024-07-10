@@ -23,7 +23,7 @@ export class AuthEffects {
         this.authService.login(action.loginData).pipe(
           map((response: AuthenticationResponse) => {
             if (response.success) {
-              return loginSuccess({ user: response.user, isLogged: true });
+              return loginSuccess({ user: response.user });
             } else {
               return loginFailure({ error: response.errorMessage });
             }

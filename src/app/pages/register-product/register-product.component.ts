@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Import CommonModule
+import { Store } from '@ngrx/store';
+import { createProduct } from '../../state/product/product.actions';
+import { RegisterProduct } from '../../../models/register-product.model';
 
 @Component({
   selector: 'app-register-product',
@@ -9,31 +12,73 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
   standalone: true, // Define como standalone
   imports: [CommonModule, ReactiveFormsModule] // Importa CommonModule e ReactiveFormsModule diretamente no componente
 })
-export class RegisterProductComponent {
-  productForm: FormGroup;
-  promotion: string = '';
+export class RegisterProductComponent implements OnInit{
+  registerProductForm: FormGroup
   days: string[] = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+  promotion: string = '0';
 
-  constructor(private fb: FormBuilder) {
-    this.productForm = this.fb.group({
-      name: [''],
-      description: [''],
-      unitPrice: [''],
-      image: [''], // campo para a imagem do produto
-      promotion: ['nenhuma'],
-      validDays: [''],
+  constructor( private formBuilder: FormBuilder, private store: Store){
+    this.registerProductForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      price: ['', [Validators.required, Validators.min(0)]],
+      quantity: ['', [Validators.required, Validators.min(1)]],
+      details: ['', Validators.required],
+      imageUrl: ['', Validators.required],
+      saleId: ['0'],
+      validDays: [[]],
       endDate: [''],
-      minQuantity: [''],
       promoPrice: [''],
-      promotionBanner: [''] // campo para o banner de promoção
+      minQuantity: ['']
     });
   }
 
-  onPromotionChange(event: any): void {
-    this.promotion = event.target.value;
+  ngOnInit(): void {
+    this.registerProductForm.get('saleId')!.valueChanges.subscribe(value => {
+      this.onPromotionChange(value);
+    });
   }
 
-  onSubmit(): void {
-    console.log(this.productForm.value);
+  onPromotionChange(promotion: string): void {
+    this.promotion = promotion;
+  }
+
+  registerProduct(): void {
+    console.log(this.registerProductForm.value)
+
+    if (!this.registerProductForm.valid){
+      console.error('Form is invalid');
+      
+      return
+    }
+
+    let product = this.mapFormToProduct()
+    
+    console.log(product);
+
+    this.store.dispatch(createProduct({product: product}));
+  }
+
+  mapFormToProduct(): RegisterProduct {
+    const saleId = +this.registerProductForm.get('saleId')!.value
+
+    const sale = saleId == 0 ? null : {
+      saleId: saleId,
+      validDays: this.registerProductForm.get('validDays')!.value,
+      endDate: this.registerProductForm.get('endDate')!.value,
+      price: this.registerProductForm.get('promoPrice')!.value,
+      minQuantity: this.registerProductForm.get('minQuantity')!.value
+    };
+
+    const product: RegisterProduct = {
+      id: '',
+      name: this.registerProductForm.get('name')!.value,
+      price: this.registerProductForm.get('price')!.value,
+      quantityInStock: this.registerProductForm.get('quantity')!.value,
+      details: this.registerProductForm.get('details')!.value,
+      imageUrl: this.registerProductForm.get('imageUrl')!.value,
+      sale: sale
+    };
+
+    return product;
   }
 }

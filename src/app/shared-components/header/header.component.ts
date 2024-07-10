@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/internal/Observable';
 import { AsyncPipe } from '@angular/common';
+import { isLoggedIn } from '../../state/auth/auth.selectors';
+import { logout } from '../../state/auth/auth.actions';
 
 @Component({
   selector: 'app-header',
@@ -15,16 +17,30 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-
-  isLogged: boolean = false;
-
-  constructor(){
+export class HeaderComponent implements OnInit{
+  constructor(private store:Store){
     
   }
 
-  switchLogin(){
-    this.isLogged = !this.isLogged
+  ngOnInit(): void {
+    this.checkLogin();
   }
+  
+  checkLogin(): boolean {
+    let isLogged = false;
+    
+    this.store.select(isLoggedIn).subscribe(isLoggedIn => {
+      isLogged = isLoggedIn;
+    });
+
+    return isLogged;
+  }
+
+  logout(): void {
+    this.store.dispatch(logout());
+  }
+  // switchLogin(){
+  //   this.isLogged = !this.isLogged
+  // }
 
 }
