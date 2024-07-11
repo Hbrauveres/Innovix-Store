@@ -18,62 +18,30 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>
-					<div class="product-info">
-						<div class="product-image"></div>
-						<div class="product-details">
-							<div class="product-title">Produto 1</div>
-							<div class="product-description">Descrição do produto 1 em duas linhas.<br>Mais detalhes do
-								produto.</div>
+			@for(item of cartItems; track item){
+				<tr>
+					<td>
+						<div class="product-info">
+							<img class="product-image" src={{item.imageUrl}}>
+							<div class="product-details">
+								<div class="product-title">{{item.name}}</div>
+								<div class="product-description">{{item.details}}</div>
+							</div>
 						</div>
-					</div>
-				</td>
-				<td>R$ 100,00</td>
-				<td>2</td>
-				<td>R$ 200,00</td>
-			</tr>
-			<tr class="divider-row">
-				<td colspan="4">
-					<hr>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="product-info">
-						<div class="product-image"></div>
-						<div class="product-details">
-							<div class="product-title">Produto 2</div>
-							<div class="product-description">Descrição do produto 2 em duas linhas.<br>Mais detalhes do
-								produto.</div>
-						</div>
-					</div>
-				</td>
-				<td>R$ 150,00</td>
-				<td>1</td>
-				<td>R$ 150,00</td>
-			</tr>
-			<tr class="divider-row">
-				<td colspan="4">
-					<hr>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="product-info">
-						<div class="product-image"></div>
-						<div class="product-details">
-							<div class="product-title">Produto 3</div>
-							<div class="product-description">Descrição do produto 3 em duas linhas.<br>Mais detalhes do
-								produto.</div>
-						</div>
-					</div>
-				</td>
-				<td>R$ 200,00</td>
-				<td>3</td>
-				<td>R$ 600,00</td>
-			</tr>
+					</td>
+					<td>R$ {{item.unitPrice}}</td>
+					<td>{{item.quantity}}</td>
+					<td>R$ {{item.quantity * item.unitPrice}}</td>
+				</tr>
 
+				@if(cartItems.length > 1) {
+					<tr class="divider-row">
+						<td colspan="4">
+							<hr>
+						</td>
+					</tr>
+				}
+			}
 		</tbody>
 	</table>
 </div>

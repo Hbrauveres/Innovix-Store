@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-price-summary',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './price-summary.component.css'
 })
 export class PriceSummaryComponent {
-
+  constructor(private store: Store){}
 }

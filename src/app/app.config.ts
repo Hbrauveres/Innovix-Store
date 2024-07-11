@@ -13,6 +13,8 @@ import { productsReducer } from './state/product/product.reducers';
 import { ProductsEffects } from './state/product/product.effects';
 import { userReducer } from './state/user/user.reducers';
 import { UserEffects } from './state/user/user.effects';
+import { cartReducer } from './state/cart/cart.reducers';
+import { CartEffects } from './state/cart/cart.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +23,7 @@ export const appConfig: ApplicationConfig = {
     provideState({ name: 'products', reducer: productsReducer }),
     provideState({ name: 'auth', reducer:  authReducer}),
     provideState({ name: 'user', reducer:  userReducer}),
+    provideState({ name: 'cart', reducer:  cartReducer}),
     provideEffects(),
     provideHttpClient(withInterceptors([
         tokenInterceptor
@@ -28,7 +31,8 @@ export const appConfig: ApplicationConfig = {
     provideEffects([
       ProductsEffects,
       AuthEffects,
-      UserEffects
+      UserEffects,
+      CartEffects
     ]),
     provideStoreDevtools({
       maxAge: 25,

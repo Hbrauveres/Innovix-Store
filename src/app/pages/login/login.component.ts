@@ -15,6 +15,7 @@ import { login } from '../../state/auth/auth.actions';
 import { loadUser } from '../../state/user/user.actions';
 import { selectUserToken } from '../../state/auth/auth.selectors';
 import { filter, firstValueFrom, map, take } from 'rxjs';
+import { loadCart } from '../../state/cart/cart.actions';
 
 @Component({
   selector: 'app-login',
@@ -66,5 +67,6 @@ export class LoginComponent {
     const username: string = this.loginForm.get('username')!.value;
   
     this.store.dispatch(loadUser({ userEmail: username, token: authToken }));
+    this.store.dispatch(loadCart({ userEmail: username }));
   }
 }
