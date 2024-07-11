@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { loadCart, loadCartSuccess, loadCartFailure, addToCart, removeFromCart, calculateTax, setShippingAddress, saveCart, saveCartSuccess, saveCartFailure } from './cart.actions';
-import { exhaustMap, map, withLatestFrom } from 'rxjs/operators';
+import { loadCart, loadCartSuccess, loadCartFailure, calculateTax, saveCart, saveCartSuccess, saveCartFailure } from './cart.actions';
+import { exhaustMap, map } from 'rxjs/operators';
 import { CartResponse } from '../../../models/responses/cart-response.model';
 import { CheckoutService } from '../../../services/checkout.service';
 import { SaveCartResponse } from '../../../models/responses/save-cart-response.model';

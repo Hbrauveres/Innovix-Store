@@ -1,12 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { Product } from '../../../models/product.model';
 import { Cart } from '../../../models/cart.model';
 import { Address } from '../../../models/address.model';
 import { CartProduct } from '../../../models/cart-product';
 
-export const addToCart = createAction('[Cart] Add To Cart', props<{ product: Product }>());
-
-export const removeFromCart = createAction('[Cart] Remove From Cart', props<{ productId: string }>());
+export const addToCart = createAction('[Cart] Add To Cart', props<{ product: CartProduct }>());
 
 export const loadCart = createAction('[Cart] Load Cart', props<{userEmail: string}>());
 export const loadCartSuccess = createAction('[Cart] Load Cart Success', props<{ cart: Cart }>());

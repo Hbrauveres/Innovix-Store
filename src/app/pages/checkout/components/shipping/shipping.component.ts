@@ -19,15 +19,6 @@ export class ShippingComponent {
 	isEditing = false;
 	userEmail: string = '';
 	cartItems: CartProduct[] = [];
-	// displayShippingAddress: Address = {
-    //     streetAddress: '',
-    //     zipCode: '',
-    //     city: '',
-    //     state: '',
-    //     neighborhood: '',
-    //     additionalInformation: ''
-    // };
-
 	streetAddress: string = '';
 	zipCode: string = '';
 	city: string = '';

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { AsyncPipe } from '@angular/common';
 import { isLoggedIn } from '../../state/auth/auth.selectors';
 import { logout } from '../../state/auth/auth.actions';
+import { selectCartItemsQty } from '../../state/cart/cart.selectors';
 
 @Component({
   selector: 'app-header',
@@ -18,14 +19,24 @@ import { logout } from '../../state/auth/auth.actions';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
+  
+  cartItemsQty: number = 0;
+
   constructor(private store:Store){
     
   }
 
   ngOnInit(): void {
     this.checkLogin();
+    this.loadCartItemsQty();
   }
   
+  loadCartItemsQty(){
+    this.store.select(selectCartItemsQty).subscribe(itemsQty => {
+      this.cartItemsQty = itemsQty;
+    });
+  }
+
   checkLogin(): boolean {
     let isLogged = false;
     
