@@ -1,91 +1,32 @@
-<section class="text-gray-600 body-font">
-    <div class="container px-5 py-5 mx-auto">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <h3 class="mr-auto text-xl font-bold">Produtos</h3>
-            <app-search-bar class="ml-auto"></app-search-bar>
-        </div>
-    
-      <div class="flex flex-wrap -m-4">
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page" routerLink="/product">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-            <p class="mt-1">$16.00</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-            <p class="mt-1">$21.15</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-            <p class="mt-1">$12.00</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-            <p class="mt-1">$18.40</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-            <p class="mt-1">$16.00</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-            <p class="mt-1">$21.15</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-            <p class="mt-1">$12.00</p>
-          </div>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-            <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-            <p class="mt-1">$18.40</p>
-          </div>
-        </div>
-      </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="products-display.component.css">
+<link rel="stylesheet" href="../../../../../assets/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<div class="container">
+  <div class="produtos-header">
+    <div class="title poppins-regular">Produtos</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar produtos..." class="search-input poppins-regular">
+      <button class="search-button">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
-  </section>
+  </div>
+
+  <div class="products-container">
+    <div class="product-list">
+      @for (product of products; track trackProduct) {
+        <div class="product-card" [routerLink]="['/product', product.id]">
+          <div class="product-image" [style.backgroundImage]="'url(' + product.imageUrl + ')'"></div>
+          <div class="product-name">{{ product.name }}</div>
+          <div class="product-description">{{ product.details }}</div>
+          <div class="product-price">{{ product.price }}</div>
+        </div>
+      }
+    </div>
+  </div>
+  
+</div>

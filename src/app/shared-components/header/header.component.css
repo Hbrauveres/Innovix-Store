@@ -1,0 +1,44 @@
+.site-header {
+    background-color: #E9D7E4;
+    color: black;
+    padding: 20px 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: relative;
+}
+
+.header-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.header-buttons {
+    display: flex;
+}
+
+.header-buttons button {
+    margin-left: 30px;
+}
+
+.link-text {
+    color: #000000;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+
+.link-text:hover {
+    color: white;
+  }

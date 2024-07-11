@@ -1,0 +1,43 @@
+.footer {
+    background-color: #E9D7E4;
+    padding: 20px 0;
+    border-top: 1px solid #E9D7E4;
+    margin-top: auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-top .logo img {
+    height: 35px;
+    padding: 0 20px;
+}
+
+.logo {
+    padding-left: 20px;
+}
+
+.footer-top .address {
+    font-size: 14px;
+    color: #000000;
+    padding: 0 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #7d7d7d;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    text-align: left;
+}
+
+.footer-bottom .copyright {
+    font-size: 14px;
+    color: #000000;
+    padding: 0 20px;
+}

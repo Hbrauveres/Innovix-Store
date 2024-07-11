@@ -1,0 +1,70 @@
+<div class="product-form-container poppins-regular">
+    <h2>Cadastro de Produto</h2>
+    <form [formGroup]="registerProductForm" (ngSubmit)="registerProduct()">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" formControlName="name" required>
+        </div>
+        <div class="form-group">
+            <label for="details">Descrição:</label>
+            <input type="text" id="details" formControlName="details" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Valor Unitário:</label>
+            <input type="text" min="0" id="price" formControlName="price" placeholder="Enter price" pattern="[0-9]+(\.[0-9][0-9]?)?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantidade em Estoque:</label>
+            <input type="number" min="0" id="quantity" formControlName="quantity" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">Imagem do Produto:</label>
+            <input type="text" id="imageUrl" formControlName="imageUrl">
+        </div>
+
+        <div class="form-group">
+            <label for="saleId">Promoção:</label>
+            <select id="saleId" formControlName="saleId" required>
+                <option value="0">Nenhuma</option>
+                <option value="1">Leve 3, Pague 2</option>
+                <option value="2">Pack</option>
+            </select>
+        </div>
+        <div id="promotionDetails">
+            <ng-container *ngIf="promotion === '1'">
+                <div class="form-group">
+                    <label>Válida nos dias:</label>
+                    <div class="checkbox-group">
+                        @for (day of days; track day){
+                            <div class="checkbox-item">
+                                <input type="checkbox" [value]="day" formControlName="validDays">
+                                <div>{{day}}</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">Data de Término da Promoção:</label>
+                    <input type="date" id="endDate" formControlName="endDate" required>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="promotion === '2'">
+                <div class="form-group">
+                    <label for="endDate">Data de Término da Promoção:</label>
+                    <input type="date" id="endDate" formControlName="endDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantidade Mínima de Produtos:</label>
+                    <input type="number" id="quantity" formControlName="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="promoPrice">Valor Promocional:</label>
+                    <input type="number" id="promoPrice" formControlName="promoPrice" required>
+                </div>
+            </ng-container>
+        </div>
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+</div>
