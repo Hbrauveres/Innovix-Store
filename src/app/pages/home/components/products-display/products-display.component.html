@@ -19,7 +19,7 @@
   <div class="products-container">
     <div class="product-list">
       @for (product of products; track trackProduct) {
-        <div class="product-card">
+        <div class="product-card" [routerLink]="['/product', product.id]">
           <div class="product-image" [style.backgroundImage]="'url(' + product.imageUrl + ')'"></div>
           <div class="product-name">{{ product.name }}</div>
           <div class="product-description">{{ product.details }}</div>

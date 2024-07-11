@@ -1,11 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Product } from '../../../../../models/product.model';
 
 @Component({
   selector: 'app-banner',
 	standalone: true,
+  imports: [
+    RouterLink,
+    RouterLinkActive
+  ],
   templateUrl: 'banner.component.html',
   styleUrls: ['banner.component.css']
 })
@@ -15,7 +19,7 @@ export class BannerComponent implements OnInit {
 
   activeIndex = 0;
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
   }

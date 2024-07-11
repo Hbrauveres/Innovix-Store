@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store"
-import { AuthenticationResponse } from "../../../models/responses/authenticationResponse.model"
+import { AuthenticationResponse } from "../../../models/responses/authentication-response.model"
 import { AuthenticationRequest } from "../../../models/requests/authenticationRequest.model"
 
 export const LOGIN_REQUEST = '[auth] login requested'

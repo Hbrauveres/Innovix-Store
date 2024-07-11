@@ -9,8 +9,8 @@ import { RegisterProduct } from '../../../models/register-product.model';
   selector: 'app-register-product',
   templateUrl: './register-product.component.html',
   styleUrls: ['./register-product.component.css'],
-  standalone: true, // Define como standalone
-  imports: [CommonModule, ReactiveFormsModule] // Importa CommonModule e ReactiveFormsModule diretamente no componente
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule]
 })
 export class RegisterProductComponent implements OnInit{
   registerProductForm: FormGroup

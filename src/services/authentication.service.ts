@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { AuthenticationResponse } from "../models/responses/authenticationResponse.model";
+import { AuthenticationResponse } from "../models/responses/authentication-response.model";
 import { AuthenticationRequest } from "../models/requests/authenticationRequest.model";
 import { RegisterUserData } from "../models/register-user-data.model";
 import { LoginData } from "../models/login-data.model";
@@ -19,6 +19,7 @@ export class AuthenticationService {
   }
 
   login(authRequest: LoginData): Observable<AuthenticationResponse> {
+    console.log("login called")
     return this.http.post<AuthenticationResponse>(`${this.API_BASE_URL}/api/login`, authRequest);
   }
 

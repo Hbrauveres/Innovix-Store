@@ -1,12 +1,14 @@
+import { UserData } from "../../../models/user-data.model";
+
 export interface UserState {
-    userInfo: any;
+    user: UserData | null;
     loading: boolean;
-    error: any;
+    error: string ;
   }
   
   export const initialUserState: UserState = {
-    userInfo: null,
+    user: null,
     loading: false,
-    error: null,
+    error: '',
   };
   

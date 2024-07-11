@@ -4,7 +4,7 @@
         <button class="carousel-button next" (click)="navigate('next')">&#10093;</button>
         <ul>
             @for (product of discountedProducts; track product; let  i = $index) {
-                <li class="slide" [class.data-active]="isActive(i)">
+                <li class="slide" [class.data-active]="isActive(i)" [routerLink]="['/product', product.id]">
                     <img [src]="product.imageUrl" alt="tanto faz">
                 </li>
             }

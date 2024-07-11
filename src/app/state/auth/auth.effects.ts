@@ -2,11 +2,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthenticationService } from '../../../services/authentication.service';
-import { login, loginSuccess, loginFailure, register, registerSuccess, registerFailure } from './auth.actions';
+import { login, loginSuccess, loginFailure } from './auth.actions';
 import { exhaustMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
-import { AuthenticationResponse } from '../../../models/responses/authenticationResponse.model';
+import { AuthenticationResponse } from '../../../models/responses/authentication-response.model';
 
 @Injectable()
 export class AuthEffects {
@@ -23,7 +23,8 @@ export class AuthEffects {
         this.authService.login(action.loginData).pipe(
           map((response: AuthenticationResponse) => {
             if (response.success) {
-              return loginSuccess({ user: response.user });
+              console.log(response.token);
+              return loginSuccess({ authToken: response.token });
             } else {
               return loginFailure({ error: response.errorMessage });
             }
@@ -34,31 +35,9 @@ export class AuthEffects {
     )
   );
 
-  // register$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(register),
-  //     exhaustMap(action =>
-  //       this.authService.register(action.registerUserData).pipe(
-  //         map(user => registerSuccess({ user })),
-  //         catchError(error => of(registerFailure({ error })))
-  //       )
-  //     )
-  //   )
-  // );
-
   loginSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loginSuccess),
-      map(() => {
-        this.router.navigate(['/']);
-      })
-    ),
-    { dispatch: false }
-  );
-
-  registerSuccess$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(registerSuccess),
       map(() => {
         this.router.navigate(['/']);
       })

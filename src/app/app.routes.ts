@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'register', title: "Sign Up", component: RegisterComponent },
   { path: 'checkout', title: "Checkout", component: CheckoutComponent },
   { path: 'login', title: "Login", component: LoginComponent },
-  { path: 'product', component: ProductComponent },
+  { path: 'product/:productId', component: ProductComponent },
   { path: 'register-product', component: RegisterProductComponent },
   { path: '**', title: "Page not found", component: PageNotFoundComponent },
 ];

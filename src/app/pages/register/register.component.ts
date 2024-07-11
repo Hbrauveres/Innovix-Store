@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 import Validation from '../../../utils/input-validation';
 import { formatDate } from '@angular/common';
 import { AuthenticationService } from '../../../services/authentication.service';
-import axios from 'axios';
+import { RegisterUserData } from '../../../models/register-user-data.model';
+import { registerUser } from '../../state/user/user.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-register',
@@ -28,8 +30,7 @@ export class RegisterComponent {
 
   constructor(
 		private formBuilder: FormBuilder,
-		private authService: AuthenticationService,
-		private router: Router
+    private store: Store,
 	) {
 		this.form = new FormGroup({
 			fullName: new FormControl(''),
@@ -82,26 +83,28 @@ export class RegisterComponent {
     );
   }
 
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
+  mapFormToRegisterUserData(formData: any): RegisterUserData {
+    return {
+      fullName: formData.fullName,
+      birthday: formData.birthday,
+      cpf: formData.cpf,
+      phone: formData.phone,
+      email: formData.email,
+      password: formData.password,
+      type: 'CUSTOMER',
+      id: 0,
+    };
   }
 
-  async onSubmit(): Promise<void> {
-
+  onSubmit(): void {
     if (this.form.invalid) {
       return;
     }
 
 		const formData = this.form.value;
+    const userData = this.mapFormToRegisterUserData(formData);
 
-		try {
-      const response = await axios.post('http://localhost:8080/api/persons/registerCustomer', formData);
-      this.successMessage = 'Registration successful!';
-
-			this.router.navigate(['/home']);
-    } catch (error) {
-      console.error('There was an error!', error);
-    }
+		this.store.dispatch(registerUser({ registerUserData: userData }));
   }
 
   onReset(): void {
