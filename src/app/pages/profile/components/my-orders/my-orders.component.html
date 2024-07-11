@@ -9,110 +9,36 @@
     <h2 class="poppins-semibold">Meus pedidos</h2>
     <hr class="divider">
     
-    <div class="pedido">
-        <div class="pedido-header">
-            <span class="pedido-numero">Pedido #001</span>
-            <span class="pedido-data">Data: 30/05/2024</span>
-        </div>
-        <table class="pedido-table">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço Unitário</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Produto A</td>
-                    <td>2</td>
-                    <td>R$ 25,00</td>
-                    <td>R$ 50,00</td>
-                </tr>
-                <tr>
-                    <td>Produto B</td>
-                    <td>1</td>
-                    <td>R$ 35,00</td>
-                    <td>R$ 35,00</td>
-                </tr>
-                <tr>
-                    <td>Produto B</td>
-                    <td>1</td>
-                    <td>R$ 35,00</td>
-                    <td>R$ 35,00</td>
-                </tr>
-                <tr>
-                    <td>Produto B</td>
-                    <td>1</td>
-                    <td>R$ 35,00</td>
-                    <td>R$ 35,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <hr class="divider">
-    <div class="pedido">
-        <div class="pedido-header">
-            <span class="pedido-numero">Pedido #002</span>
-            <span class="pedido-data">Data: 31/05/2024</span>
-        </div>
-        <table class="pedido-table">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço Unitário</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Produto C</td>
-                    <td>3</td>
-                    <td>R$ 20,00</td>
-                    <td>R$ 60,00</td>
-                </tr>
-                <tr>
-                    <td>Produto D</td>
-                    <td>1</td>
-                    <td>R$ 40,00</td>
-                    <td>R$ 40,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <hr class="divider">
-    <div class="pedido">
-        <div class="pedido-header">
-            <span class="pedido-numero">Pedido #002</span>
-            <span class="pedido-data">Data: 31/05/2024</span>
-        </div>
-        <table class="pedido-table">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço Unitário</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Produto C</td>
-                    <td>3</td>
-                    <td>R$ 20,00</td>
-                    <td>R$ 60,00</td>
-                </tr>
-                <tr>
-                    <td>Produto D</td>
-                    <td>1</td>
-                    <td>R$ 40,00</td>
-                    <td>R$ 40,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    @for (order of userData?.orders; track order) {
+        <div class="pedido">
+            <div class="pedido-header">
+                <span class="pedido-numero">Pedido #{{order.orderNumber}}</span>
+                <span class="pedido-data">Data: {{order.date}}</span>
+            </div>
+            <table class="pedido-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for (product of order.products; track product){
+                    <tr>
+                        <td>{{product.name}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>R$ {{product.price}}</td>
+                        <td>R$ {{product.price * product.quantity}}</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>   
+        
+        @if(numOrders > 1){
+            <hr class="divider">
+        } 
+    }
 </div>
