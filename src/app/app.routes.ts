@@ -7,6 +7,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RegisterProductComponent } from './pages/register-product/register-product.component';
+import { OrderConcludedComponent } from './pages/order-concluded/order-concluded.component';
 
 export const routes: Routes = [
   { path: 'home', title: "Innovix", component: HomeComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'profile', title: "My Account", component: ProfileComponent },
   { path: 'register', title: "Sign Up", component: RegisterComponent },
   { path: 'checkout', title: "Checkout", component: CheckoutComponent },
+  { path: 'order-complete', title: "Obrigado!", component: OrderConcludedComponent },
   { path: 'login', title: "Login", component: LoginComponent },
   { path: 'product/:productId', component: ProductComponent },
   { path: 'register-product', component: RegisterProductComponent },

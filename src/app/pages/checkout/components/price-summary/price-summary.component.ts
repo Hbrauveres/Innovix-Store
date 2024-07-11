@@ -3,11 +3,15 @@ import { Store } from '@ngrx/store';
 import { loadCart } from '../../../../state/cart/cart.actions';
 import { selectCartItems, selectCartShipping, selectCartSubtotal, selectCartTax } from '../../../../state/cart/cart.selectors';
 import { CartProduct } from '../../../../../models/cart-product';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-price-summary',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+  ],
   templateUrl: './price-summary.component.html',
   styleUrl: './price-summary.component.css'
 })
@@ -20,7 +24,10 @@ export class PriceSummaryComponent implements OnInit {
 
   cartItems: CartProduct[] = [];
   
-  constructor(private store: Store){}
+  constructor(
+    private store: Store,
+    private router: Router
+  ){}
   
   ngOnInit(): void {
     this.loadPricing();
