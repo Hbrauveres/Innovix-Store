@@ -12,6 +12,9 @@
             <input id="street" placeholder="Rua" [readonly]="!isEditing">
         </div>
         <div class="form-group">
+            <input id="additionalInfo" placeholder="Complemento" [readonly]="!isEditing">
+        </div>
+        <div class="form-group">
             <input id="neighborhood" placeholder="Bairro" [readonly]="!isEditing">
             <input id="city" placeholder="Cidade" [readonly]="!isEditing">
         </div>
@@ -23,6 +26,9 @@
     <div class="button-section">
         <button type="button" (click)="toggleEdit()">
             {{ isEditing ? 'Salvar' : 'Editar' }}
+        </button>
+        <button type="button">
+            Calcular Frete
         </button>
     </div>
 </div>

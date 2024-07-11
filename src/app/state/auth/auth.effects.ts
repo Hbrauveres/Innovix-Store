@@ -1,4 +1,3 @@
-// effects/auth.effects.ts
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthenticationService } from '../../../services/authentication.service';
@@ -23,7 +22,6 @@ export class AuthEffects {
         this.authService.login(action.loginData).pipe(
           map((response: AuthenticationResponse) => {
             if (response.success) {
-              console.log(response.token);
               return loginSuccess({ authToken: response.token });
             } else {
               return loginFailure({ error: response.errorMessage });

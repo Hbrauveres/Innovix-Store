@@ -39,8 +39,4 @@ export class HeaderComponent implements OnInit{
   logout(): void {
     this.store.dispatch(logout());
   }
-  // switchLogin(){
-  //   this.isLogged = !this.isLogged
-  // }
-
 }

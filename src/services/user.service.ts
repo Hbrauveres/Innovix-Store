@@ -18,13 +18,9 @@ export class UserService {
   API_BASE_URL = 'http://localhost:3000';
 
   getUser(userEmail: string, authToken: string): Observable<UserResponse>{
-    console.log(`reached service get user call with auth token ${authToken}`);
-
     const headers = new HttpHeaders({
       'Authorization': authToken
     })
-    
-    console.log(`calling user with ${authToken}`);
 
     return this.http.get<UserResponse>(`${this.API_BASE_URL}/get-user`, 
       {

@@ -13,6 +13,6 @@ export const cartReducer = createReducer(
   on(loadCart, state => ({ ...state, loading: true })),
   on(loadCartSuccess, (state, { cartItems }) => ({ ...state, loading: false, items: cartItems })),
   on(loadCartFailure, (state, { error }) => ({ ...state, loading: false, error })),
-  on(calculateTax, state => ({ ...state, tax: state.items.reduce((acc, item) => acc + item.price * 0.1, 0) })), // Example tax calculation
+  on(calculateTax, state => ({ ...state, tax: state.items.reduce((acc, item) => acc + item.price * 0.1, 0) })), 
   on(setShippingAddress, (state, { address }) => ({ ...state, shippingAddress: address }))
 );

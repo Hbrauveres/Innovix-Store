@@ -43,7 +43,6 @@ export class RegisterProductComponent implements OnInit{
   }
 
   registerProduct(): void {
-    console.log(this.registerProductForm.value)
 
     if (!this.registerProductForm.valid){
       console.error('Form is invalid');
@@ -52,8 +51,6 @@ export class RegisterProductComponent implements OnInit{
     }
 
     let product = this.mapFormToProduct()
-    
-    console.log(product);
 
     this.store.dispatch(createProduct({product: product}));
   }

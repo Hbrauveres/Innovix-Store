@@ -1,4 +1,3 @@
-// reducers/products.reducer.ts
 import { createReducer, on } from '@ngrx/store';
 import { loadProducts, loadProductsSuccess, loadProductsFailure } from './product.actions';
 import { ProductsState, initialProductsState } from './product.state';

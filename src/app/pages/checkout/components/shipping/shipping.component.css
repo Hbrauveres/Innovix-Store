@@ -42,6 +42,10 @@
   width: 15%;
 }
 
+.button-section > * {
+  margin-bottom: 15px;
+}
+
 button {
   background-color: #8B71C3;
   color: white;

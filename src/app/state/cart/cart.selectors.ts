@@ -1,4 +1,3 @@
-// selectors/cart.selectors.ts
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { CartState } from '../state/cart.state';
 

@@ -1,4 +1,3 @@
-// effects/cart.effects.ts
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CartService } from '../../services/cart.service';
@@ -24,6 +23,4 @@ export class CartEffects {
       )
     )
   );
-
-  // Other effects for addToCart, removeFromCart, updateCartItem, etc. can be added similarly
 }

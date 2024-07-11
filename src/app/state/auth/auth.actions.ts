@@ -1,4 +1,3 @@
-// actions/auth.actions.ts
 import { createAction, props } from '@ngrx/store';
 import { LoginData } from '../../../models/login-data.model';
 

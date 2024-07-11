@@ -21,7 +21,6 @@ export class UserEffects {
       exhaustMap(action =>
         this.userService.getUser(action.userEmail, action.token).pipe(
           map((response: UserResponse) => {
-          console.log("response recieved");
           if (response.success) {
             return loadUserSuccess({ userData: response.user });
           } else {

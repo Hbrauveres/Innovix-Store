@@ -19,7 +19,6 @@ export class AuthenticationService {
   }
 
   login(authRequest: LoginData): Observable<AuthenticationResponse> {
-    console.log("login called")
     return this.http.post<AuthenticationResponse>(`${this.API_BASE_URL}/api/login`, authRequest);
   }
 
