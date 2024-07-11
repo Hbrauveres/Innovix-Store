@@ -29,6 +29,17 @@ export const selectCartTax = createSelector(
   (state: CartState) => state.tax
 );
 
+export const selectCartShipping = createSelector(
+  selectCartState,
+  (state: CartState) => state.shippingPrice
+);
+
+export const selectCartSubtotal = createSelector(
+  selectCartState,
+  (state: CartState) => state.items.reduce((total: any, product: CartProduct) => total + product.quantity * product.unitPrice, 0)
+);
+
+
 export const selectShippingAddress = createSelector(
   selectCartState,
   (state: CartState) => state.shippingAdrress

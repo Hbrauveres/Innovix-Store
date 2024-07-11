@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Address } from '../../../../../models/address.model';
 import { selectCartItems, selectShippingAddress } from '../../../../state/cart/cart.selectors';
 import { FormsModule } from '@angular/forms';
-import { saveCart, setShippingAddress } from '../../../../state/cart/cart.actions';
+import { calculateShipping, calculateTax, saveCart, setShippingAddress } from '../../../../state/cart/cart.actions';
 import { selectUser } from '../../../../state/user/user.selectors';
 import { Cart } from '../../../../../models/cart.model';
 import { CartProduct } from '../../../../../models/cart-product';
@@ -83,6 +83,20 @@ export class ShippingComponent {
 			this.neighborhood = address.neighborhood,
 			this.additionalInformation = address.additionalInformation
 		});
+	}
+
+	calculateShipping() {
+		let updatedAddress: Address = { 
+			streetAddress: this.streetAddress,
+			zipCode: this.zipCode,
+			city: this.city,
+			state: this.state,
+			neighborhood: this.neighborhood,
+			additionalInformation: this.additionalInformation
+		 };
+
+		this.store.dispatch(calculateShipping({address: updatedAddress}))
+		this.store.dispatch(calculateTax({cartItems: this.cartItems}))
 	}
 }
 

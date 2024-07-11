@@ -9,9 +9,13 @@ export const loadCart = createAction('[Cart] Load Cart', props<{userEmail: strin
 export const loadCartSuccess = createAction('[Cart] Load Cart Success', props<{ cart: Cart }>());
 export const loadCartFailure = createAction('[Cart] Load Cart Failure', props<{ error: string }>());
 
-export const calculateTax = createAction('[Cart] Calculate Tax');
+export const calculateTax = createAction('[Cart] Calculate Tax', props<{ cartItems: CartProduct[] }>());
+export const calculateTaxSuccess = createAction('[Cart] Calculate Tax Success', props<{ tax: number }>());
+export const calculateTaxFailure = createAction('[Cart] Calculate Tax Failure', props<{ error: string }>());
 
-export const calculateShipping = createAction('[Cart] Calculate Tax');
+export const calculateShipping = createAction('[Cart] Calculate Shipping', props<{ address: Address }>());
+export const calculateShippingSuccess = createAction('[Cart] Calculate Shipping Success', props<{ shipping: number }>());
+export const calculateShippingFailure = createAction('[Cart] Calculate Shipping Failure', props<{ error: string }>());
 
 export const setShippingAddress = createAction('[Cart] Set Shipping Address', props<{ address: Address }>());
 

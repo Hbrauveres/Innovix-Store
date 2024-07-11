@@ -7,6 +7,8 @@ import { SaveCartRequest } from "../models/requests/save-cart-request.model";
 import { SaveCartResponse } from "../models/responses/save-cart-response.model";
 import { CartProduct } from "../models/cart-product";
 import { Address } from "../models/address.model";
+import { CalculateShippingResponse } from "../models/responses/calculate-shipping-response.model";
+import { CalculateTaxResponse } from "../models/responses/calculate-tax-response.model" 
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +41,16 @@ export class CheckoutService {
     }
     
     return this.http.post<SaveCartResponse>(`${this.API_BASE_URL}/checkout/save-cart`, saveCartRequest)  
+  }
+
+  calculateTax(products: CartProduct[]): Observable<CalculateTaxResponse> {
+    const totalPrice = products.reduce((total, product) => total + (product.unitPrice * product.quantity), 0);
+    
+    return this.http.post<CalculateTaxResponse>(`${this.API_BASE_URL}/checkout/calculate-tax`, { totalPrice } )
+  }
+
+  calculateShipping(shippingAddress: Address): Observable<CalculateShippingResponse> {
+
+    return this.http.post<CalculateShippingResponse>(`${this.API_BASE_URL}/checkout/calculate-shipping`, shippingAddress )
   }
 }
